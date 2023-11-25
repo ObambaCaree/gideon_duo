@@ -92,4 +92,5 @@ for (let i = 0; i < process.env.LESSONS; i++) {
   ).then(response => response.json())
 
   console.log({ xp: response.xpGain })
+  pause.seconds(process.env.PAUSE*(1+random.randrange(30)/100))
 }
