@@ -8,6 +8,11 @@ on:
         description: 'Number of lessons to be done'
         required: false
         type: number
+      pause:
+        default: 45
+        description: 'pause to wait between lessons'
+        required: false
+        type: number
 
 jobs:
   study:
@@ -23,3 +28,4 @@ jobs:
         env:
           DUOLINGO_JWT: ${{ secrets.DUOLINGO_JWT }}
           LESSONS: ${{ inputs.lessons }}
+          PAUSE: ${{ inputs.pause }}
