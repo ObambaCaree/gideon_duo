@@ -4,7 +4,7 @@ const headers = {
   'user-agent':
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36',
 }
-var lessonsdone = 0;
+
 const { sub } = JSON.parse(
   Buffer.from(process.env.DUOLINGO_JWT.split('.')[1], 'base64').toString(),
 )
@@ -91,9 +91,5 @@ for (let i = 0; i < process.env.LESSONS; i++) {
     },
   ).then(response => response.json())
 
-var totalExp = process.env.LESSONS * 20;
-  lessonsdone = lessonsdone + 20;
-  var percentaged = lessonsdone / totalExp;
-  var percentage = percentaged * 100;
-console.warn(totalExp + " / " + lessonsdone + " | " + percentage + "%")
+  console.log({ xp: response.xpGain })
 }
