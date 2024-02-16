@@ -65,7 +65,7 @@ for (let i = 0; i < process.env.LESSONS; i++) {
       isV2: true,
       juicy: true,
       learningLanguage,
-xpGains.find(x => !!x.skillId && x.skillId.length > 30).skillId,
+      skillId: xpGains.find(xpGain => xpGain.skillId).skillId,
       smartTipsVersion: 2,
       type: 'SPEAKING_PRACTICE',
     }),
